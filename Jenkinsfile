@@ -25,7 +25,7 @@ pipeline{
             }
             steps {
                 sh 'apk add --update python3 py3-pip'
-                sh 'pip install xmlrunner'
+                sh 'pip install xmlrunner --break-system-packages'
                 sh "python3 Lab_3_UnitTest.py"
             }
             post {
