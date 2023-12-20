@@ -44,7 +44,7 @@ pipeline{
         stage('Docker Build'){
             steps {
                 sh 'pwd'
-                sh 'docker build -t lab3 /var/jenkins_home/workspace/Lab3/Lab3'
+                sh 'docker build -t lab3 .'
             }
 
         }
@@ -66,7 +66,7 @@ pipeline{
                     def imageTag = readFile 'docker-image-tag'
                     // Створити Docker образ та позначити його тегом
                     def myimageTag = "alexeyprvz/jenkins_lab3"
-                    sh "docker build -t ${myimageTag} /var/jenkins_home/workspace/Lab3/Lab3"
+                    sh "docker build -t ${myimageTag} -f Dockerfile ."
                 }
             }
         }
